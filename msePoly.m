@@ -9,6 +9,10 @@ for i = 1:size(yTest,1)
     for j = 1:size(coefs,1)
         yPred = yPred + coefs(j)*xTest(i)^(j-1);
     end
+    if(yTest(i) == 1)
+        blabalbla = 4;
+        
+    end
     error = error + (yPred - yTest(i))^2;
     
     
