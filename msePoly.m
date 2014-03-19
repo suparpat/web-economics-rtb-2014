@@ -1,4 +1,5 @@
 function rtn = msePoly(xTraining, xTest, yTraining, yTest, k)
+original_size = size(xTraining,2);
 phi = phiVector(xTraining, k);
 coefs = phi \ yTraining;
 error = 0;
@@ -6,8 +7,10 @@ for i = 1:size(yTest,1)
     
     %calculate y(learned) at the point of  actual y
     yPred = 0;
-    for j = 1:size(coefs,1)
-        yPred = yPred + coefs(j)*xTest(i)^(j-1);
+    for j = 1:k
+        for m = 1:original_size
+            yPred = yPred + coefs((j-1)*original_size + m)*xTest(i)^(j-1);
+        end
     end
     if(yTest(i) == 1)
         blabalbla = 4;
