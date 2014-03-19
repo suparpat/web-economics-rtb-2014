@@ -1,6 +1,7 @@
 function rtn = msePoly(xTraining, xTest, yTraining, yTest, k)
 original_size = size(xTraining,2);
 phi = phiVector(xTraining, k);
+phiTest = phiVector(xTest,k);
 coefs = phi \ yTraining;
 error = 0;
 for i = 1:size(yTest,1)
@@ -9,7 +10,8 @@ for i = 1:size(yTest,1)
     yPred = 0;
     for j = 1:k
         for m = 1:original_size
-            yPred = yPred + coefs((j-1)*original_size + m)*xTest(i)^(j-1);
+            address = (j-1)*original_size + m;
+            yPred = yPred + coefs(address)*xTest(i, m)^(j-1);
         end
     end
     if(yTest(i) == 1)
