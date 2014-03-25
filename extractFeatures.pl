@@ -3,8 +3,10 @@ open(FILE, $file);
 foreach $line(<FILE>){
 	print"I am reading a line \n";
 	@features = split('\t', $line);
+	@extracted = ();
 	foreach(@features){
 		#do something with the features
+		
 
 	}
 
