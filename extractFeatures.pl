@@ -12,7 +12,7 @@ foreach $line(<FILE>){
 	push(@extracted, @features[7]);	 #region
 	push(@extracted, @features[8]);  #city
 	push(@extracted, @features[9]);  #ad exchange
-	push(@extracted, @features[10]);  #domain
+	push(@extracted, hex(@features[10]));  #domain
 	push(@extracted, @features[14]);  #slot width
 	push(@extracted, @features[15]);  #slot height
 	print  NEWFILE join(',', @extracted) . "\n";
