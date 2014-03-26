@@ -7,12 +7,14 @@ foreach $line(<FILE>){
 		#do something with the features
 	@extracted = ();
 	push(@extracted, @features[0]);  #label		
-	push(@extracted, hex(@features[1])); 
-	push(@extracted, @features[2]);
-	push(@extracted, @features[4]);		
-	push(@extracted, @features[6]);
-	push(@extracted, @features[7]);
-	push(@extracted, @features[8]);
+	push(@extracted, @features[2]);  #timestamp	
+	push(@extracted, @features[3]);	 #logtype	
+	push(@extracted, @features[7]);	 #region
+	push(@extracted, @features[8]);  #city
+	push(@extracted, @features[9]);  #ad exchange
+	push(@extracted, @features[10]);  #domain
+	push(@extracted, @features[14]);  #slot width
+	push(@extracted, @features[15]);  #slot height
 	print  NEWFILE join(',', @extracted) . "\n";
 
 }
