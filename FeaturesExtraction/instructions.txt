@@ -1,0 +1,5 @@
+Instructions
+
+1. Run extractUserAgents.pl to produce useragents_extracted.txt
+2. Run java -jar UserAgentUtil.jar to produce processed_useragents_extracted.txt
+3. Run extractFeatures.pl to produce data_training_sample_extracted.txt
