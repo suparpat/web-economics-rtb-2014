@@ -14,7 +14,7 @@ foreach $line(<FILE>){
 		#do something with the features
 	@extracted = ();
 	push(@extracted, @features[0]);  #label		
-	push(@extracted, @features[2]);  #timestamp	
+	push(@extracted, substr @features[2], 8, 4);  #timestamp	
 	push(@extracted, @features[3]);	 #logtype	
 	$temp = $useragents_line[$line_count];
 	$temp =~ s/\r|\n//g;
