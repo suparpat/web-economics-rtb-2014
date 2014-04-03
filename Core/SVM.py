@@ -29,9 +29,11 @@ def main():
 		clf = svm.SVC(C=1.0, cache_size=200, class_weight='auto', coef0=0.0, degree=gam,
 		gamma=gam, kernel='rbf', max_iter=-1, probability=True, random_state=None,
 		shrinking=True, tol=0.001, verbose=False)
+		print("created SVM, now fitting data...")
 		clf.fit(X,y)	
 	#	print('training err: %f ' %clf.fit(X,y).score(X,y))
 #		print('gamma: %f ' %gam)
+		print("data has been fitted, now running predictions...")
 		print(getError(clf.predict_proba(X), y))
 		#print("gamma")
 def getError(preds, y):
