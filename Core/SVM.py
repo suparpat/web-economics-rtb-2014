@@ -38,9 +38,10 @@ def main():
 		#print("gamma")
 def getError(preds, y):
 	total = 0
-	count = 1
+	count = 0
 	for tmp_preds in preds:
 		total += (float(y[count]) - (1.0 -float(tmp_preds[int(y[count])])))**2
+		count = count + 1
 	print("total : %d",total); 
 	return (total / len(y))**0.5	
 		
